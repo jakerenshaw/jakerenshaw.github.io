@@ -1,12 +1,13 @@
 var canvas = document.getElementById('myCanvas'),
 context = canvas.getContext('2d');
 background = new Image();
-background.src = 'street.jpg';
 rockyBike = new Image();
-rockyBike.src = 'rockybike.png';
 win = new Image();
-win.src = 'win.jpg';
 lose = new Image();
+
+background.src = 'street.jpg';
+rockyBike.src = 'rockybike.png';
+win.src = 'win.jpg';
 lose.src = 'lose.jpg';
 
 var bikePosition = -50;
@@ -62,12 +63,22 @@ function endGame(){
 	{
 		winMusic.play();
 		context.drawImage(win, 0, 0, 900, 500);
-		context.fillText(winMes, 100, 50);
+		context.beginPath();
+		context.rect(145, 3, 500, 40);
+		context.fillStyle = 'yellow';
+		context.fill();
+		context.fillStyle = 'blue';
+		context.fillText(winMes, 150, 30);
 	}
 	else
 	{
 		loseMusic.play();
 		context.drawImage(lose, 0, 0, 900, 500);
-		context.fillText(loseMes, 100, 50);
+		context.beginPath();
+		context.rect(165, 3, 300, 40);
+		context.fillStyle = 'black';
+		context.fill();
+		context.fillStyle = 'red';
+		context.fillText(loseMes, 170, 30);
 	}
 }
