@@ -53,11 +53,11 @@ function playGame(){
 			stepsX += 4;
 			sizeH -= 4;
 			sizeW -= 4;
-			distance += 0.5;
+			distance += 1;
 			flip += 1;
 			context.drawImage(stairs, 0, 0, 900, 500);
 			context.font="30px Georgia";
-			context.fillText(distance + "m", 800, 50);
+			context.fillText(distance + " steps", 800, 50);
 			if (flip % 2 === 0)
 			{
 				context.drawImage(rockyRun, stepsX, stepsV, sizeW, sizeH);
